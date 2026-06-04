@@ -181,10 +181,7 @@ class _DesktopHomePageState extends State<DesktopHomePage>
   }
 
   buildRightPane(BuildContext context) {
-    return Container(
-      color: Theme.of(context).scaffoldBackgroundColor,
-      child: ConnectionPage(),
-    );
+    return const SizedBox.shrink();
   }
 
   buildIDBoard(BuildContext context) {

@@ -331,11 +331,7 @@ class _ConnectionPageState extends State<ConnectionPage>
       {bool isFileTransfer = false,
       bool isViewCamera = false,
       bool isTerminal = false}) {
-    var id = _idController.id;
-    connect(context, id,
-        isFileTransfer: isFileTransfer,
-        isViewCamera: isViewCamera,
-        isTerminal: isTerminal);
+    return;
   }
 
   /// UI for the remote ID TextField.

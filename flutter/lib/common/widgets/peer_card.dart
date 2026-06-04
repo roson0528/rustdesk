@@ -1544,38 +1544,7 @@ void connectInPeerTab(BuildContext context, Peer peer, PeerTabIndex tab,
     bool isTcpTunneling = false,
     bool isRDP = false,
     bool isTerminal = false}) async {
-  var password = '';
-  bool isSharedPassword = false;
-  if (tab == PeerTabIndex.ab) {
-    // If recent peer's alias is empty, set it to ab's alias
-    // Because the platform is not set, it may not take effect, but it is more important not to display if the connection is not successful
-    if (peer.alias.isNotEmpty &&
-        (await bind.mainGetPeerOption(id: peer.id, key: "alias")).isEmpty) {
-      await bind.mainSetPeerAlias(
-        id: peer.id,
-        alias: peer.alias,
-      );
-    }
-    if (!gFFI.abModel.current.isPersonal()) {
-      if (peer.password.isNotEmpty) {
-        password = peer.password;
-        isSharedPassword = true;
-      }
-      if (password.isEmpty) {
-        final abPassword = gFFI.abModel.getdefaultSharedPassword();
-        if (abPassword != null) {
-          password = abPassword;
-          isSharedPassword = true;
-        }
-      }
-    }
-  }
-  connect(context, peer.id,
-      password: password,
-      isSharedPassword: isSharedPassword,
-      isFileTransfer: isFileTransfer,
-      isTerminal: isTerminal,
-      isViewCamera: isViewCamera,
-      isTcpTunneling: isTcpTunneling,
-      isRDP: isRDP);
+  return;
 }
+
+
